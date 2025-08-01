@@ -1,0 +1,67 @@
+﻿
+@model CRM_Workflow_test.ViewModels.homeViewModel
+
+<h2>Users</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Tasks</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>IsHead</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var task in Model.Tasks)
+        {
+            <tr>
+                <td>@task.Id</td>
+                <td>@task.Name</td>
+                <td>@task.isHead</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h2>TaskTransitions</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TaskId</th>
+            <th>ChildId</th>
+            <th>Condition</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tt in Model.TasksTransitions)
+        {
+            <tr>
+                <td>@tt.Id</td>
+                <td>@tt.taskId</td>
+                <td>@tt.childId</td>
+                <td>@tt.condition</td>
+            </tr>
+        }
+    </tbody>
+</table>
